@@ -1,0 +1,47 @@
+# =============================================================================
+# mise.toml — Global tool versions for devcontainer-profiles
+# Tools are organized by profile layer. All tools are installed in the
+# base layer; profile-specific compose files activate only what's needed.
+# =============================================================================
+
+[tools]
+# --- Base tools ---
+go        = "latest"
+node      = "lts"
+pnpm      = "latest"
+fzf       = "latest"
+zoxide    = "latest"
+starship  = "latest"
+gh        = "latest"
+tea       = "latest"
+"pipx:pre-commit" = "latest"
+gitleaks  = "latest"
+shellcheck = "latest"
+shfmt     = "latest"
+actionlint = "latest"
+direnv    = "latest"
+"cargo:cocogitto" = "latest"
+"cargo:git-cliff" = "latest"
+
+# --- Python profile ---
+python    = "3.12"
+"pipx:uv" = "latest"
+"pipx:poetry" = "latest"
+
+# --- Java profile ---
+java      = ["corretto-11.0", "corretto-17.0", "corretto-21.0", "corretto-25.0"]
+maven     = "latest"
+
+# --- Infra profile ---
+kubectl   = "latest"
+helm      = "latest"
+k9s       = "latest"
+
+# --- Productivity ---
+"pipx:yamllint" = "latest"
+
+[settings]
+experimental = true
+
+[env]
+MISE_PYTHON_DEFAULT_PACKAGES_FILE = ""

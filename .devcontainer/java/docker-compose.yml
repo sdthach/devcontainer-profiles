@@ -1,0 +1,21 @@
+services:
+  devcontainer:
+    extends:
+      file: ../base/docker-compose.base.yml
+      service: devcontainer
+    volumes:
+      - devcontainer-maven-cache:/home/vscode/.m2
+
+volumes:
+  devcontainer-maven-cache:
+    external: true
+  devcontainer-mise-cache:
+    external: true
+  devcontainer-go-cache:
+    external: true
+  devcontainer-cargo-cache:
+    external: true
+  devcontainer-pnpm-cache:
+    external: true
+  devcontainer-docker-data:
+    external: true

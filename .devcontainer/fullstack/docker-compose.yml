@@ -1,0 +1,17 @@
+services:
+  devcontainer:
+    extends:
+      file: ../base/docker-compose.base.yml
+      service: devcontainer
+    volumes:
+      - devcontainer-pip-cache:/home/vscode/.cache/pip
+      - devcontainer-maven-cache:/home/vscode/.m2
+      - devcontainer-nuget-cache:/home/vscode/.nuget
+
+volumes:
+  devcontainer-pip-cache:
+    external: true
+  devcontainer-maven-cache:
+    external: true
+  devcontainer-nuget-cache:
+    external: true

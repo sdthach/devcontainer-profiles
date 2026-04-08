@@ -1,0 +1,7 @@
+# =============================================================================
+# .sops.yaml — SOPS encryption rules
+# Encrypted files use AGE keys for public-repo-safe secrets
+# =============================================================================
+creation_rules:
+  - path_regex: secrets/.*\.enc\.yaml$
+    age: "REPLACE_WITH_YOUR_AGE_PUBLIC_KEY"

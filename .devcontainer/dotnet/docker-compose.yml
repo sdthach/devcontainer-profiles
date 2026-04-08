@@ -1,0 +1,11 @@
+services:
+  devcontainer:
+    extends:
+      file: ../base/docker-compose.base.yml
+      service: devcontainer
+    volumes:
+      - devcontainer-nuget-cache:/home/vscode/.nuget
+
+volumes:
+  devcontainer-nuget-cache:
+    external: true

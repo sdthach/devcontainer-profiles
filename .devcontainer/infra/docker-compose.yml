@@ -1,0 +1,7 @@
+services:
+  devcontainer:
+    extends:
+      file: ../base/docker-compose.base.yml
+      service: devcontainer
+
+volumes: {}

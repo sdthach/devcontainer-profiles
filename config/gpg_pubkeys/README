@@ -1,0 +1,8 @@
+# =============================================================================
+# GPG Public Keys directory
+# Place exported GPG public keys here as .asc files.
+# These are public by definition and safe to commit to a public repo.
+#
+# Example:
+#   gpg --export --armor your-key-id > config/gpg_pubkeys/your-name.asc
+# =============================================================================
