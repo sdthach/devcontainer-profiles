@@ -1,0 +1,55 @@
+[user]
+	# Placeholder — override with your name/email
+	name = CHANGE_ME
+	email = CHANGE_ME
+	signingkey = CHANGE_ME
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
+
+[gpg]
+	program = gpg
+
+[init]
+	defaultBranch = main
+
+[core]
+	autocrlf = input
+	editor = code --wait
+	pager = less -FRX
+
+[pull]
+	rebase = true
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[rerere]
+	enabled = true
+
+[credential]
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = cache
+
+[alias]
+	wt = worktree
+	wtl = worktree list
+	wta = worktree add
+	wtr = worktree remove
+	st = status --short --branch
+	lg = log --oneline --graph --decorate --all -20
+	unstage = reset HEAD --
+	last = log -1 HEAD

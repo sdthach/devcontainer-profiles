@@ -1,0 +1,35 @@
+# =============================================================================
+# Base Docker Compose — shared by all profiles
+# =============================================================================
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      # --- Repos bind mount (WSL2 ext4) ---
+      - ${HOME}/repos:/home/vscode/repos:cached
+      # --- AGE private key (read-only) ---
+      - ${HOME}/.config/sops/age/keys.txt:/home/vscode/.config/sops/age/keys.txt:ro
+      # --- Shared named volumes ---
+      - devcontainer-mise-cache:/home/vscode/.local/share/mise
+      - devcontainer-go-cache:/home/vscode/go
+      - devcontainer-cargo-cache:/home/vscode/.cargo
+      - devcontainer-pnpm-cache:/home/vscode/.local/share/pnpm
+      - devcontainer-docker-data:/var/lib/docker
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+
+volumes:
+  devcontainer-mise-cache:
+    external: true
+  devcontainer-go-cache:
+    external: true
+  devcontainer-cargo-cache:
+    external: true
+  devcontainer-pnpm-cache:
+    external: true
+  devcontainer-docker-data:
+    external: true

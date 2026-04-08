@@ -1,0 +1,22 @@
+# =============================================================================
+# .inputrc — Readline configuration (bash, and apps using libreadline)
+# =============================================================================
+
+# Case-insensitive completion
+set completion-ignore-case on
+
+# Show all completions on first tab
+set show-all-if-ambiguous on
+
+# Color completions by file type
+set colored-stats on
+
+# Append slash to directory completions
+set mark-directories on
+set mark-symlinked-directories on
+
+# Show common prefix before cycling
+set menu-complete-display-prefix on
+
+# Enable visible stats (file type indicators)
+set visible-stats on

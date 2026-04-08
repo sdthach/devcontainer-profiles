@@ -1,0 +1,29 @@
+# =============================================================================
+# Central shared volume definitions
+# Referenced by all profile docker-compose.yml files via `include`
+# =============================================================================
+volumes:
+  devcontainer-mise-cache:
+    name: devcontainer-mise-cache
+    external: true
+  devcontainer-maven-cache:
+    name: devcontainer-maven-cache
+    external: true
+  devcontainer-nuget-cache:
+    name: devcontainer-nuget-cache
+    external: true
+  devcontainer-pip-cache:
+    name: devcontainer-pip-cache
+    external: true
+  devcontainer-pnpm-cache:
+    name: devcontainer-pnpm-cache
+    external: true
+  devcontainer-go-cache:
+    name: devcontainer-go-cache
+    external: true
+  devcontainer-cargo-cache:
+    name: devcontainer-cargo-cache
+    external: true
+  devcontainer-docker-data:
+    name: devcontainer-docker-data
+    external: true
