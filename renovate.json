@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["docker-compose", "dockerfile"],
+      "groupName": "docker images"
+    },
+    {
+      "matchManagers": ["devcontainer"],
+      "groupName": "devcontainer features"
+    }
+  ]
+}
