@@ -1,0 +1,51 @@
+{
+  "name": "Infrastructure Dev Container",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "devcontainer",
+  "workspaceFolder": "/home/vscode/repos",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "bash -c 'cd /workspaces/devcontainer-profiles && scripts/install-dotfiles.sh && scripts/sync-secrets.sh && mise install'",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.fontFamily": "JetBrainsMono Nerd Font, Hasklug Nerd Font, monospace",
+        "editor.fontSize": 14,
+        "workbench.colorTheme": "Dracula"
+      },
+      "extensions": [
+        "dracula-theme.theme-dracula",
+        "catppuccin.catppuccin-vsc",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "esbenp.prettier-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "sonarsource.sonarlint-vscode",
+        "tamasfe.even-better-toml",
+        "editorconfig.editorconfig",
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "tim-koehler.helm-intellisense",
+        "hashicorp.terraform",
+        "hashicorp.hcl",
+        "amazonwebservices.aws-toolkit-vscode",
+        "ms-vscode-remote.remote-containers"
+      ]
+    },
+    "jetbrains": {
+      "plugins": [
+        "com.intellij.plugins.sonarlint",
+        "com.github.catppuccin.jetbrains",
+        "com.chrisrm.idea.dracula",
+        "ris58h.keypromoterx",
+        "zielu.gittoolbox",
+        "org.intellij.plugins.hcl"
+      ]
+    }
+  }
+}
