@@ -1,0 +1,33 @@
+# Java pre-commit hooks — extends base.
+# Copy to your project as .pre-commit-config.yaml and customize.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.22.1
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.14.0
+    hooks:
+      - id: pretty-format-java
+        args: ['--aosp', '--autofix']
+
+  - repo: https://github.com/pmd/pmd
+    rev: pmd_releases/7.12.0
+    hooks:
+      - id: pmd
+        args: ['--rulesets', 'rulesets/java/quickstart.xml', '--fail-on-violation']
