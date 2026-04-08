@@ -1,0 +1,37 @@
+# =============================================================================
+# SSH Config Template — Multi-host configuration
+# This file is SOPS-encrypted as secrets/ssh_config.enc.yaml since it
+# contains internal IP addresses. Decrypted by sync-secrets.sh → ~/.ssh/config
+# =============================================================================
+
+# GitHub
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_gpg
+
+# Internal Gitea (Omni-Lab)
+Host gitea.local
+    HostName 192.168.1.x
+    User git
+    IdentityFile ~/.ssh/id_rsa_gpg
+
+# Bitbucket
+Host bitbucket.org
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/id_rsa_gpg
+
+# Azure DevOps (SSH)
+Host ssh.dev.azure.com
+    HostName ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_gpg
+    IdentitiesOnly yes
+
+# Defaults
+Host *
+    AddKeysToAgent yes
+    IdentitiesOnly yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
