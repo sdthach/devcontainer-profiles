@@ -3,6 +3,10 @@
 > **Version:** 1.2-draft
 > **Date:** 2026-04-07
 > **Status:** Awaiting approval
+>
+> **Version:** 1.2.1
+> **Date:** 2026-05-09
+> **Status:** Approved and Applied
 
 ## TL;DR
 
@@ -90,7 +94,7 @@ devcontainer-profiles/
 ├── .gitignore
 ├── .pre-commit-config.yaml              # Pre-commit for this repo itself
 ├── .sops.yaml                           # Root SOPS config
-├── LICENSE                              # MIT or Apache-2.0
+├── LICENSE                              # Apache License 2.0
 ├── renovate.json                        # Automated tool version updates
 ├── thoughts/                            # Design notes
 │   └── plan/
@@ -592,7 +596,7 @@ indent_style = tab
 
 ### 12.2 LICENSE
 
-MIT license (permissive, suitable for a public developer tooling repo).
+Apache License 2.0 (permissive, suitable for a public developer tooling repo, with explicit patent terms).
 
 ---
 
@@ -649,7 +653,7 @@ Steps can proceed sequentially within the phase.
 24. Write `.editorconfig` (root)
 25. Write `.pre-commit-config.yaml` (for this repo)
 26. Write `renovate.json`
-27. Write `LICENSE` (MIT)
+27. Write `LICENSE` (Apache License 2.0)
 
 ### Phase 7: Documentation (step 28)
 *Depends on all previous phases.*
@@ -708,7 +712,7 @@ Steps can proceed sequentially within the phase.
 | AGE key host-mounted read-only   | Never in image/env/logs; most secure approach           |
 | Dracula theme active (Catppuccin installed) | User preference; both available for switching |
 | Central volumes.yml              | Single source of truth, no duplication across profiles  |
-| MIT license                      | Public repo, permissive, standard for dev tooling      |
+| Apache License 2.0               | Public repo, permissive, clearer patent grant and retaliation terms |
 
 ---
 

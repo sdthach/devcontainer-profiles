@@ -242,4 +242,6 @@ sudo chown -R vscode:vscode ~/.cache ~/.m2 ~/.nuget
 
 ## License
 
-[MIT](LICENSE)
+[Apache License 2.0](LICENSE)
+
+This repository does not currently include a separate NOTICE file.
