@@ -4,6 +4,10 @@ A modular Dev Container repository for WSL2 with IDE parity between VS Code and 
 
 ## Quick Start
 
+You do **not** need to create or mount a separate VHDX for the default setup. In this repo, "WSL2 ext4" simply means the normal Linux filesystem inside your Ubuntu distro, such as `~/repos`. Keep your repos there, not on `/mnt/c`, and this repo will bind-mount them into the container.
+
+If you want a dedicated virtual disk for repo storage, see [Optional: Dedicated VHDX Storage](docs/advanced-storage-layout.md).
+
 ```bash
 # 1. Clone into your WSL2 ext4 filesystem
 cd ~/repos
