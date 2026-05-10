@@ -4,6 +4,10 @@
 
 This repo is your **environment**, not your project. Your code lives in `~/repos` on WSL2 and is bind-mounted into the container at `/home/vscode/repos`. You pick a profile (python, java, etc.) that gives you the right tools and IDE extensions.
 
+You do **not** need to create or mount a separate VHDX for the default setup. "WSL2 ext4" here means the normal Linux filesystem inside your Ubuntu distro, such as `~/repos`. Keep your repos there, not on `/mnt/c`, and Docker will bind-mount them into the container.
+
+If you prefer to keep repos on a dedicated virtual disk, see [Optional: Dedicated VHDX Storage](advanced-storage-layout.md).
+
 ```
 Windows
   └── JetBrains (local) → \\wsl$\Ubuntu\home\<user>\repos\<project>
@@ -27,9 +31,12 @@ WSL2 ext4: ~/repos/<project> ←────────────────
 
 ```bash
 # Clone into WSL2 ext4 (NOT /mnt/c — performance will be poor)
-cd ~
+mkdir -p ~/repos
+cd ~/repos
 git clone git@github.com:sdthach/devcontainer-profiles.git
 ```
+
+That `~/repos` path is already on the distro's ext4 filesystem. No separate Windows-side disk setup is required for the normal workflow.
 
 ### 3. Create external Docker volumes
 
